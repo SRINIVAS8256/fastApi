@@ -1,0 +1,102 @@
+. fastapi built by python libraries {starlette and pydantic}
+
+# starlette = manages how ur api receives requests and sends back responses
+#pydantic = used to check if the coming into ur API is correct and in the  right fromat
+1️⃣ 1xx – Informational (rarely used)
+
+“Hold on, I’m processing…”
+
+100 → Continue
+
+101 → Switching protocols (WebSockets)
+
+👉 Mostly ignore for now.
+
+2️⃣ 2xx – Success ✅
+
+“All good, request worked”
+
+200 OK → Request successful (GET, PATCH)
+
+201 Created → New resource created (POST)
+
+202 Accepted → Request accepted, processing later
+
+204 No Content → Success but no response body
+
+🔥 Most common:
+
+GET → 200
+
+POST → 201
+
+3️⃣ 3xx – Redirection 🔁
+
+“Go somewhere else”
+
+301 Moved Permanently → URL changed forever
+
+302 Found → Temporary redirect
+
+304 Not Modified → Use cached version
+
+Mostly used by browsers, not APIs.
+
+4️⃣ 4xx – Client error ❌
+
+“You messed up the request”
+
+Most important ones (MEMORIZE)
+
+400 Bad Request → Invalid input / wrong JSON
+
+401 Unauthorized → Not logged in / token missing
+
+403 Forbidden → Logged in but no permission
+
+404 Not Found → Endpoint or resource not found
+
+405 Method Not Allowed → Wrong HTTP method
+
+409 Conflict → Duplicate data (email already exists)
+
+422 Unprocessable Entity → Validation error (FastAPI ❤️ this)
+
+👉 FastAPI uses 422 a LOT
+
+5️⃣ 5xx – Server error 💥
+
+“Server crashed or bug exists”
+
+500 Internal Server Error → Code bug
+
+502 Bad Gateway → Upstream server error
+
+503 Service Unavailable → Server down / overloaded
+
+504 Gateway Timeout → Server took too long
+
+If you see these → backend issue, not frontend.
+
+Interview-ready cheat table 🧠
+Code	Meaning	Who’s fault
+200	OK	—
+201	Created	—
+400	Bad request	Client
+401	Unauthorized	Client
+403	Forbidden	Client
+404	Not found	Client
+409	Conflict	Client
+422	Validation error	Client
+500	Server error	Server
+
+
+
+
+
+
+#WHY FASTAPI IS FAST TO Code
+  1.automatic input Validation
+  2.auto-generated interactive documentation
+  3.seamless integration with modern ecosysytem(ML/DLlibraries, OAuth ,JWT,SQLAlchemy,docker,kubernetes)
+  

@@ -98,5 +98,5 @@ Code	Meaning	Who’s fault
 #WHY FASTAPI IS FAST TO Code
   1.automatic input Validation
   2.auto-generated interactive documentation
-  3.seamless integration with modern ecosysytem(ML/DLlibraries, OAuth ,JWT,SQLAlchemy,docker,kubernetes)
+  3.seamless integration with modern ecosysytem(ML/DLlibraries, OAuth ,JWT,SQLAlchemy,docker,kubernetes)))
   

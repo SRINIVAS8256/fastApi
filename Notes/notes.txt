@@ -99,4 +99,17 @@ Code	Meaning	Who’s fault
   1.automatic input Validation
   2.auto-generated interactive documentation
   3.seamless integration with modern ecosysytem(ML/DLlibraries, OAuth ,JWT,SQLAlchemy,docker,kubernetes)))
-  
+
+
+#software methods(Installed on Machines)
+    1. static     2.dynamic
+    eg:calendar     eg:excel sheet
+
+    USER INTERACTIONS == 4 TYPES : C R U D(create retreive update delete )
+
+
+
+#website software methods(server ----> clients)
+    1. static_website    2.dynamic_website
+    interms of HTTP create=post  retreive=get  update=put  delete=delete
+    

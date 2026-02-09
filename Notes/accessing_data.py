@@ -1,0 +1,138 @@
+a={
+  "patients": [
+    {
+      "id": "P001",
+      "firstName": "John",
+      "lastName": "Doe",
+      "gender": "Male",
+      "dateOfBirth": "1985-03-12",
+      "phone": "+1-555-0101",
+      "email": "john.doe@example.com",
+      "address": "123 Main St, New York, NY",
+      "bloodType": "O+",
+      "conditions": ["Hypertension"],
+      "allergies": ["Penicillin"]
+    },
+    {
+      "id": "P002",
+      "firstName": "Emily",
+      "lastName": "Smith",
+      "gender": "Female",
+      "dateOfBirth": "1990-07-25",
+      "phone": "+1-555-0102",
+      "email": "emily.smith@example.com",
+      "address": "45 Oak Ave, Chicago, IL",
+      "bloodType": "A-",
+      "conditions": ["Asthma"],
+      "allergies": []
+    },
+    {
+      "id": "P003",
+      "firstName": "Michael",
+      "lastName": "Brown",
+      "gender": "Male",
+      "dateOfBirth": "1978-11-03",
+      "phone": "+1-555-0103",
+      "email": "michael.brown@example.com",
+      "address": "78 Pine Rd, Austin, TX",
+      "bloodType": "B+",
+      "conditions": ["Diabetes Type 2"],
+      "allergies": ["Sulfa drugs"]
+    },
+    {
+      "id": "P004",
+      "firstName": "Sophia",
+      "lastName": "Johnson",
+      "gender": "Female",
+      "dateOfBirth": "1995-02-18",
+      "phone": "+1-555-0104",
+      "email": "sophia.johnson@example.com",
+      "address": "9 Lake View, Seattle, WA",
+      "bloodType": "AB+",
+      "conditions": [],
+      "allergies": ["Peanuts"]
+    },
+    {
+      "id": "P005",
+      "firstName": "David",
+      "lastName": "Wilson",
+      "gender": "Male",
+      "dateOfBirth": "1969-09-30",
+      "phone": "+1-555-0105",
+      "email": "david.wilson@example.com",
+      "address": "560 Market St, San Francisco, CA",
+      "bloodType": "O-",
+      "conditions": ["High Cholesterol"],
+      "allergies": []
+    },
+    {
+      "id": "P006",
+      "firstName": "Olivia",
+      "lastName": "Martinez",
+      "gender": "Female",
+      "dateOfBirth": "1988-06-14",
+      "phone": "+1-555-0106",
+      "email": "olivia.martinez@example.com",
+      "address": "88 Sunset Blvd, Los Angeles, CA",
+      "bloodType": "A+",
+      "conditions": ["Anxiety"],
+      "allergies": ["Latex"]
+    },
+    {
+      "id": "P007",
+      "firstName": "James",
+      "lastName": "Taylor",
+      "gender": "Male",
+      "dateOfBirth": "2001-01-09",
+      "phone": "+1-555-0107",
+      "email": "james.taylor@example.com",
+      "address": "14 River Rd, Denver, CO",
+      "bloodType": "B-",
+      "conditions": [],
+      "allergies": []
+    },
+    {
+      "id": "P008",
+      "firstName": "Ava",
+      "lastName": "Anderson",
+      "gender": "Female",
+      "dateOfBirth": "1975-12-22",
+      "phone": "+1-555-0108",
+      "email": "ava.anderson@example.com",
+      "address": "302 Hill St, Boston, MA",
+      "bloodType": "O+",
+      "conditions": ["Arthritis"],
+      "allergies": ["Aspirin"]
+    },
+    {
+      "id": "P009",
+      "firstName": "Daniel",
+      "lastName": "Lee",
+      "gender": "Male",
+      "dateOfBirth": "1982-04-05",
+      "phone": "+1-555-0109",
+      "email": "daniel.lee@example.com",
+      "address": "77 Maple Dr, San Jose, CA",
+      "bloodType": "AB-",
+      "conditions": ["Migraines"],
+      "allergies": []
+    },
+    {
+      "id": "P010",
+      "firstName": "Mia",
+      "lastName": "Clark",
+      "gender": "Female",
+      "dateOfBirth": "1998-10-11",
+      "phone": "+1-555-0110",
+      "email": "mia.clark@example.com",
+      "address": "5 Garden Way, Portland, OR",
+      "bloodType": "A+",
+      "conditions": [],
+      "allergies": ["Shellfish"]
+    }
+  ]
+}
+a["patients"][0]["id"]
+
+for a in a["patients"]:
+    print(a["id"])

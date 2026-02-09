@@ -1,0 +1,150 @@
+What is a Path Parameter?
+
+        .A path parameter is a variable part of a URL.
+
+        .It allows you to pass dynamic values inside the API path.
+
+        .Used to identify specific resources (like a patient, user, product, etc.).
+
+        .The value is extracted directly from the URL path.
+
+
+The path() function in FastApi is used to provide metadata,validation,rules and documentation hints for path parameter in ur API
+
+Title
+Description
+Example :
+    ge,gt,le,ls(greater than or equal to   less than or equal to)
+    Min_length
+    Max_length
+    regex
+
+#use of path() function
+#(...) means required parameter 
+@app.get('/patient/{patient_id}')
+def view_patient(patient_id: str=Path(...,description='Id of the patient in the DB',example='P001',ge=0)):
+    # load all patients
+    data = load_data()
+
+    for patient in data["patients"]:
+        if patient["id"] == patient_id:
+            return patient
+
+    return {"error": "Patient not found"}
+
+
+
+#HTTPException 
+              : HTTPException is a special built-in exception in FastApi used to return Custom HTTP error responses when something goes wrong in your API
+
+              instead of returning a normal JSON or crashing the server you can gracefully raise an error with 
+                   * a proper HTTP status code(like 404,400,403,etc)
+                   * a custom error message
+                   * (optional ) extra headers
+
+
+
+🔹 HTTPException (for Query Parameters)
+
+HTTPException is a special built-in exception in FastAPI used to return custom HTTP error responses when something goes wrong while handling query parameters.
+
+Instead of returning a normal JSON response or crashing the server, you can gracefully raise an error when a query parameter is invalid or missing, with:
+
+✅ a proper HTTP status code (like 400, 404, 403, etc.)
+
+✅ a custom error message
+
+✅ (optional) extra headers
+
+🔹 Example Using Query Parameter
+API Endpoint
+from fastapi import FastAPI, Query, HTTPException
+
+app = FastAPI()
+
+@app.get("/patient")
+def get_patient(patient_id: str = Query(..., description="Patient ID")):
+    
+    if patient_id != "P001":
+        raise HTTPException(
+            status_code=404,
+            detail="Patient not found"
+        )
+
+    return {"patient_id": patient_id}
+
+🔹 How It Works
+
+patient_id is passed as a query parameter
+
+Example request:
+
+/patient?patient_id=P002
+
+
+If the patient ID is invalid:
+
+API raises HTTPException
+
+Server does not crash
+
+Client receives a clean error response
+
+🔹 Example Error Response
+{
+  "detail": "Patient not found"
+}
+
+
+HTTP Status Code: 404
+
+🔹 Using HTTPException for Validation Errors
+@app.get("/search")
+def search_patient(age: int = Query(...)):
+    
+    if age < 0:
+        raise HTTPException(
+            status_code=400,
+            detail="Age must be a positive number"
+        )
+
+    return {"age": age}
+
+🔹 Example Request
+/search?age=-5
+
+Response
+{
+  "detail": "Age must be a positive number"
+}
+
+🔹 Adding Custom Headers (Optional)
+raise HTTPException(
+    status_code=400,
+    detail="Invalid patient ID",
+    headers={"X-Error": "InvalidQueryParameter"}
+)
+
+🔹 When to Use HTTPException with Query Parameters
+
+Missing required query parameter
+
+Invalid value
+
+Unauthorized access
+
+Resource not found
+
+Business rule violations
+
+🔹 Summary
+
+HTTPException helps handle query parameter errors gracefully
+
+Returns proper HTTP status codes
+
+Prevents server crashes
+
+Improves API clarity and debugging
+
+Works perfectly with Query()
